@@ -1,8 +1,14 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const resolution = 20; // 解像度を倍に設定
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight / 2;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight - document.querySelector('footer').offsetHeight;
+}
+
+resizeCanvas();
+
 const COLS = Math.floor(canvas.width / resolution);
 const ROWS = Math.floor(canvas.height / resolution);
 
@@ -74,6 +80,11 @@ canvas.addEventListener('click', (event) => {
     const col = Math.floor(x / resolution);
     const row = Math.floor(y / resolution);
     grid[col][row] = 1; // クリックしたマスを生細胞に設定
+    render(grid);
+});
+
+window.addEventListener('resize', () => {
+    resizeCanvas();
     render(grid);
 });
 

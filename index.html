@@ -19,14 +19,32 @@
         canvas {
             border: 1px solid #000;
             width: 100%; /* キャンバスの幅を画面の幅に設定 */
-            height: auto; /* 高さを自動調整 */
+            height: calc(100vh - 80px); /* フッターの高さを引いた高さに設定 */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #000; /* フッターの背景を黒色に設定 */
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        }
+        a {
+            color: #1DA1F2; /* リンクの色をTwitterの青に設定 */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Life Game</h1>
-    <h2>ChatGPTによって作成、対話者:<a href="https://twitter.com/eltociear" target="_blank" style="color: #1DA1F2;">@eltociear</a></h2>
     <canvas id="gameCanvas"></canvas>
+    <footer>
+        <h1>Life Game</h1>
+        <h2>ChatGPTによって作成、対話者:<a href="https://twitter.com/eltociear" target="_blank">@eltociear</a></h2>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
