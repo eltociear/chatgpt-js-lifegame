@@ -65,5 +65,15 @@ function update() {
     requestAnimationFrame(update);
 }
 
+canvas.addEventListener('click', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const col = Math.floor(x / resolution);
+    const row = Math.floor(y / resolution);
+    grid[col][row] = 1; // クリックしたマスを生細胞に設定
+    render(grid);
+});
+
 render(grid);
 requestAnimationFrame(update);
