@@ -1,6 +1,6 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-const resolution = 10;
+const resolution = 20; // 解像度を倍に設定
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight / 2;
 const COLS = Math.floor(canvas.width / resolution);
