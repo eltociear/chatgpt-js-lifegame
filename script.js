@@ -13,14 +13,16 @@ function buildGrid() {
 }
 
 let grid = buildGrid();
+let hue = 0; // 色相を初期化
 
 function render(grid) {
+    hue = (hue + 1) % 360; // 色相を更新
     for (let col = 0; col < grid.length; col++) {
         for (let row = 0; row < grid[col].length; row++) {
             const cell = grid[col][row];
             ctx.beginPath();
             ctx.rect(col * resolution, row * resolution, resolution, resolution);
-            ctx.fillStyle = cell ? 'green' : 'black'; // 生細胞を緑色、背景を黒色に設定
+            ctx.fillStyle = cell ? `hsl(${hue}, 100%, 50%)` : 'black'; // 生細胞を虹色、背景を黒色に設定
             ctx.fill();
             ctx.strokeStyle = 'black'; // マスの線の色も黒色に設定
             ctx.stroke();
