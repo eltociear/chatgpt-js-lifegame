@@ -7,11 +7,14 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #000; /* 背景を黒色に設定 */
+            color: #fff; /* テキストを白色に設定 */
         }
         canvas {
             border: 1px solid #000;
@@ -19,6 +22,8 @@
     </style>
 </head>
 <body>
+    <h1>Life Game</h1>
+    <h2>ChatGPTによって作成、対話者:@eltociear</h2>
     <canvas id="gameCanvas" width="600" height="600"></canvas>
     <script src="script.js"></script>
 </body>
