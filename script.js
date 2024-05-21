@@ -2,7 +2,7 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const resolution = 10;
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight / 2;
 const COLS = Math.floor(canvas.width / resolution);
 const ROWS = Math.floor(canvas.height / resolution);
 
