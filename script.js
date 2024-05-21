@@ -16,7 +16,7 @@ let grid = buildGrid();
 let hue = 0; // 色相を初期化
 
 function render(grid) {
-    hue = (hue + 1) % 360; // 色相を更新
+    hue = (hue + 16) % 360; // 色相を更新（速度を16倍に設定）
     for (let col = 0; col < grid.length; col++) {
         for (let row = 0; row < grid[col].length; row++) {
             const cell = grid[col][row];
