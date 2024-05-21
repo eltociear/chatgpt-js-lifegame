@@ -20,8 +20,9 @@ function render(grid) {
             const cell = grid[col][row];
             ctx.beginPath();
             ctx.rect(col * resolution, row * resolution, resolution, resolution);
-            ctx.fillStyle = cell ? 'black' : 'white';
+            ctx.fillStyle = cell ? 'green' : 'black'; // 生細胞を緑色、背景を黒色に設定
             ctx.fill();
+            ctx.strokeStyle = 'black'; // マスの線の色も黒色に設定
             ctx.stroke();
         }
     }
