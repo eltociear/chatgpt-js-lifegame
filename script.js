@@ -1,10 +1,10 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const resolution = 10;
-canvas.width = 600;
-canvas.height = 600;
-const COLS = canvas.width / resolution;
-const ROWS = canvas.height / resolution;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const COLS = Math.floor(canvas.width / resolution);
+const ROWS = Math.floor(canvas.height / resolution);
 
 function buildGrid() {
     return new Array(COLS).fill(null)
