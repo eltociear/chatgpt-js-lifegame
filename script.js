@@ -9,8 +9,8 @@ function resizeCanvas() {
 
 resizeCanvas();
 
-const COLS = Math.floor(canvas.width / resolution);
-const ROWS = Math.floor(canvas.height / resolution);
+let COLS = Math.floor(canvas.width / resolution);
+let ROWS = Math.floor(canvas.height / resolution);
 
 function buildGrid() {
     return new Array(COLS).fill(null)
@@ -71,6 +71,11 @@ function update() {
     grid = nextGen(grid);
     render(grid);
     requestAnimationFrame(update);
+}
+
+function restartGame() {
+    grid = buildGrid(); // グリッドをリセット
+    render(grid); // 新しいグリッドをレンダリング
 }
 
 canvas.addEventListener('click', (event) => {

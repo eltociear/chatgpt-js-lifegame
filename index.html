@@ -30,12 +30,27 @@
             padding: 10px 0;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
         }
-        a {
+        footer h1, footer h2 {
+            margin: 5px 0;
+        }
+        footer a {
             color: #1DA1F2; /* リンクの色をTwitterの青に設定 */
             text-decoration: none;
         }
-        a:hover {
+        footer a:hover {
             text-decoration: underline;
+        }
+        .restart-button {
+            background-color: #000; /* ボタンの背景を黒色に設定 */
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .restart-button:hover {
+            background-color: #333;
         }
     </style>
 </head>
@@ -44,6 +59,7 @@
     <footer>
         <h1>Life Game</h1>
         <h2>ChatGPTによって作成、対話者:<a href="https://twitter.com/eltociear" target="_blank">@eltociear</a></h2>
+        <button class="restart-button" onclick="restartGame()">restart</button>
     </footer>
     <script src="script.js"></script>
 </body>
